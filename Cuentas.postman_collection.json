@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "aa88438b-b9b0-42ae-a251-012ce685bdfc",
+		"name": "Cuentas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32311456"
+	},
+	"item": [
+		{
+			"name": "Get data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/cuentas"
+			},
+			"response": []
+		},
+		{
+			"name": "Get data id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/cuentas/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Post data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Jose Lema\",\r\n        \"genero\": \"Masculino\",\r\n        \"edad\": 30,\r\n        \"identificacion\": \"2222222222\",\r\n        \"direccion\": \"Otavalo sn y principal\",\r\n        \"telefono\": \"098254785\",\r\n        \"clienteid\": 1,\r\n        \"contrasenia\": \"1234\",\r\n        \"estado\": true\r\n    },\r\n    \"numeroCuenta\": 585545,\r\n    \"tipoCuenta\": \"Corriente\",\r\n    \"saldoInicial\": 1000.00,\r\n    \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/cuentas"
+			},
+			"response": []
+		},
+		{
+			"name": "Put data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Jose Lema\",\r\n        \"genero\": \"Masculino\",\r\n        \"edad\": 30,\r\n        \"identificacion\": \"2222222222\",\r\n        \"direccion\": \"Otavalo sn y principal\",\r\n        \"telefono\": \"098254785\",\r\n        \"clienteid\": 1,\r\n        \"contrasenia\": \"1234\",\r\n        \"estado\": true\r\n    },\r\n    \"numeroCuenta\": 585545,\r\n    \"tipoCuenta\": \"Corriente\",\r\n    \"saldoInicial\": 3000.00,\r\n    \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/cuentas/6"
+			},
+			"response": []
+		},
+		{
+			"name": "Put data",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\": {\r\n        \"id\": 1,\r\n        \"nombre\": \"Jose Lema\",\r\n        \"genero\": \"Masculino\",\r\n        \"edad\": 30,\r\n        \"identificacion\": \"2222222222\",\r\n        \"direccion\": \"Otavalo sn y principal\",\r\n        \"telefono\": \"098254785\",\r\n        \"clienteid\": 1,\r\n        \"contrasenia\": \"1234\",\r\n        \"estado\": true\r\n    },\r\n    \"numeroCuenta\": 585545,\r\n    \"tipoCuenta\": \"Corriente\",\r\n    \"saldoInicial\": 3000.00,\r\n    \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/cuentas/6"
+			},
+			"response": []
+		}
+	]
+}

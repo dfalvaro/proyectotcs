@@ -42,19 +42,13 @@ public class ClienteController {
     
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Cliente cliente, BindingResult result) {
-        // valdation.validate(cliente, result);
-        // if (result.hasFieldErrors()) {
-        //     return validation(result);
-        // }
+       
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(cliente));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Cliente cliente, BindingResult result, @PathVariable Long id) {
-        // valdation.validate(cliente, result);
-        // if (result.hasFieldErrors()) {
-        //     return validation(result);
-        // }
+       
         Optional<Cliente> clienteOptional = service.update(id, cliente);
         if (clienteOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.CREATED).body(clienteOptional.orElseThrow());
@@ -71,13 +65,5 @@ public class ClienteController {
         return ResponseEntity.notFound().build();
     }
 
-    // private ResponseEntity<?> validation(BindingResult result) {
-    //     Map<String, String> errors = new HashMap<>();
-
-    //     result.getFieldErrors().forEach(err -> {
-    //         errors.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
-    //     });
-    //     return ResponseEntity.badRequest().body(errors);
-    // }
-
+    
 }

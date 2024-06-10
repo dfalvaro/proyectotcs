@@ -41,19 +41,13 @@ public class CuentaController {
     
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Cuenta cuenta, BindingResult result) {
-        // valdation.validate(cuenta, result);
-        // if (result.hasFieldErrors()) {
-        //     return validation(result);
-        // }
+       
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(cuenta));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Cuenta cuenta, BindingResult result, @PathVariable Long id) {
-        // valdation.validate(cuenta, result);
-        // if (result.hasFieldErrors()) {
-        //     return validation(result);
-        // }
+        
         Optional<Cuenta> cuentaOptional = service.update(id, cuenta);
         if (cuentaOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.CREATED).body(cuentaOptional.orElseThrow());
@@ -70,13 +64,6 @@ public class CuentaController {
         return ResponseEntity.notFound().build();
     }
 
-    // private ResponseEntity<?> validation(BindingResult result) {
-    //     Map<String, String> errors = new HashMap<>();
-
-    //     result.getFieldErrors().forEach(err -> {
-    //         errors.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
-    //     });
-    //     return ResponseEntity.badRequest().body(errors);
-    // }
+    
 
 }

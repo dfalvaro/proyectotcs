@@ -55,19 +55,12 @@ public class MovimientoController {
     
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Movimiento movimiento, BindingResult result) {
-        // valdation.validate(movimiento, result);
-        // if (result.hasFieldErrors()) {
-        //     return validation(result);
-        // }
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.save(movimiento));
+               return ResponseEntity.status(HttpStatus.CREATED).body(service.save(movimiento));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Movimiento movimiento, BindingResult result, @PathVariable Long id) {
-        // valdation.validate(movimiento, result);
-        // if (result.hasFieldErrors()) {
-        //     return validation(result);
-        // }
+       
         Optional<Movimiento> movimientoOptional = service.update(id, movimiento);
         if (movimientoOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.CREATED).body(movimientoOptional.orElseThrow());
@@ -84,15 +77,7 @@ public class MovimientoController {
         return ResponseEntity.notFound().build();
     }
 
-    // private ResponseEntity<?> validation(BindingResult result) {
-    //     Map<String, String> errors = new HashMap<>();
-
-    //     result.getFieldErrors().forEach(err -> {
-    //         errors.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
-    //     });
-    //     return ResponseEntity.badRequest().body(errors);
-    // }
-
+    
      @ExceptionHandler(SaldoInsuficienteException.class)
     public ResponseEntity<String> handleSaldoInsuficienteException(SaldoInsuficienteException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());

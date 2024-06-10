@@ -8,6 +8,6 @@ import com.proyecto.tcs.app.movimientos.entities.Cuenta;
 
 public interface CuentaRepository extends CrudRepository<Cuenta,Long>{
 
-    // List<Cuenta> findByClienteId(Long clienteId);
+     List<Cuenta> findByClienteId(Long clienteId);
 
 }
